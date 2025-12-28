@@ -1,8 +1,5 @@
 import AnimationCanvas from "pixel_loop_library";
-import miffy from "../../assets/miffyAnim7.png";
-import Card from "../../components/Card/Card";
-import miffyBase from "../../assets/card/miffy1.png";
-import background from "../../assets/backgrounds/ParkBackground.png";
+
 import { useState } from "react";
 import Select from "../../components/Select/Select";
 import { backgrounds, baseImages, type ImageConfig } from "./config";
