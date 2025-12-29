@@ -19,6 +19,7 @@ export type ImageConfig = {
 
 export type AnimationConfig = ImageConfig & {
   animation: string;
+  animation_name: string;
 };
 export const backgrounds: ImageConfig[] = [
   { src: SunnyMeadowWay, name: "Sunny Meadow Way" },
@@ -28,8 +29,13 @@ export const backgrounds: ImageConfig[] = [
 ];
 
 export const baseImages: AnimationConfig[] = [
-  { src: Base1, name: "Pose1", animation: Animation1 },
-  { src: Base2, name: "Pose2", animation: Animation2 },
-  { src: Base3, name: "Pose3", animation: Animation3 },
-  { src: Base4, name: "Pose4", animation: Animation4 },
+  {
+    src: Base1,
+    name: "Pose1",
+    animation: Animation1,
+    animation_name: "falling",
+  },
+  { src: Base2, name: "Pose2", animation: Animation2, animation_name: "heart" },
+  { src: Base3, name: "Pose3", animation: Animation3, animation_name: "swing" },
+  { src: Base4, name: "Pose4", animation: Animation4, animation_name: "dance" },
 ];

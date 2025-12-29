@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AnimationCanvas from "pixel_loop_library";
 
 import Select from "../../components/Select/Select";
@@ -29,6 +29,16 @@ export default function AnimationView() {
         { label: "Show Card", key: "card" },
         { label: "Show Animation", key: "animation" },
     ];
+
+    const params = new URLSearchParams(window.location.search);
+    const animationId = params.get("anim");
+
+    useEffect(() => {
+        const anim = baseImages.find((v) => v.animation_name === animationId);
+        if (animationId && anim) {
+            setSelectedImage(anim);
+        }
+    }, [animationId]);
 
     return (
         <div className="flex flex-col items-center gap-6 w-full px-4 my-2">
