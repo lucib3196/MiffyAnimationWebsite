@@ -1,6 +1,6 @@
 import type { HTMLAttributes } from "react";
 
-type SelectOption = {
+export type SelectOption = {
     key: string;
     label: string;
 };
