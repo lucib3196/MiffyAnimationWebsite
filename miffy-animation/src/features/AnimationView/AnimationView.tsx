@@ -35,7 +35,7 @@ export default function AnimationView() {
             {/* Controls Panel */}
             <div
                 className="
-          w-full max-w-[520px]
+          w-full max-w-130
           bg-[#221d34]
           border-2 border-white
           shadow-[4px_4px_0_#000]
@@ -44,16 +44,18 @@ export default function AnimationView() {
             >
                 <div className="flex flex-col sm:flex-row gap-4 sm:gap-6">
                     {/* Background Select */}
-                    {(viewOption === "all" || viewOption === "card") && <div className="flex flex-col gap-1 flex-1">
-                        <span className="text-xs text-gray-300 uppercase tracking-wide">
-                            Background
-                        </span>
-                        <Select
-                            options={prepareImages(backgrounds)}
-                            selected={background}
-                            setSelected={setBackground}
-                        />
-                    </div>}
+                    {(viewOption === "all" || viewOption === "card") && (
+                        <div className="flex flex-col gap-1 flex-1">
+                            <span className="text-xs text-gray-300 uppercase tracking-wide">
+                                Background
+                            </span>
+                            <Select
+                                options={prepareImages(backgrounds)}
+                                selected={background}
+                                setSelected={setBackground}
+                            />
+                        </div>
+                    )}
 
                     {/* Character Select */}
                     <div className="flex flex-col gap-1 flex-1">
@@ -93,12 +95,13 @@ export default function AnimationView() {
           sm:flex-row
           gap-6
           w-full
-          max-w-[1100px]
+          max-w-275
         "
             >
                 {/* Scene Panel */}
-                {(viewOption === "all" || viewOption === "card") && <div
-                    className="
+                {(viewOption === "all" || viewOption === "card") && (
+                    <div
+                        className="
             w-full
             sm:w-1/2
             bg-[#221d34]
@@ -106,13 +109,15 @@ export default function AnimationView() {
             shadow-[4px_4px_0_#000]
             p-4
           "
-                >
-                    <Scene background={background} image={selectedImage?.src ?? ""} />
-                </div>}
+                    >
+                        <Scene background={background} image={selectedImage?.src ?? ""} />
+                    </div>
+                )}
 
                 {/* Animation Preview */}
-                {(viewOption === "all" || viewOption === "animation") && <div
-                    className="
+                {(viewOption === "all" || viewOption === "animation") && (
+                    <div
+                        className="
             w-full
             sm:w-1/2
             bg-[#221d34]
@@ -121,12 +126,13 @@ export default function AnimationView() {
             p-3
             flex justify-center items-center
           "
-                >
-                    <AnimationCanvas
-                        src={selectedImage.animation}
-                        animationConfig={{ imageWidth: 800, imageHeight: 800 }}
-                    />
-                </div>}
+                    >
+                        <AnimationCanvas
+                            src={selectedImage.animation}
+                            animationConfig={{ imageWidth: 800, imageHeight: 800 }}
+                        />
+                    </div>
+                )}
             </div>
         </div>
     );
